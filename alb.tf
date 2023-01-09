@@ -1,7 +1,5 @@
-################################################################################
-# Supporting Resources
-################################################################################
 
+# Supporting Resources
 module "alb_http_sg" {
   source  = "terraform-aws-modules/security-group/aws//modules/http-80"
   version = "~> 4.0"
@@ -14,10 +12,7 @@ module "alb_http_sg" {
   tags                = var.alb_sg_tags
 }
 
-################################################################################
 # Application load balancer (ALB)
-################################################################################
-
 module "alb" {
   source          = "terraform-aws-modules/alb/aws"
   version         = "~> 6.0"

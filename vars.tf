@@ -27,13 +27,13 @@ variable "vpc_azs" {
 variable "vpc_public_subnets" {
   description = "List of public subnet CIDR ranges"
   type        = list(string)
-  default     = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
+  default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 }
 
 variable "vpc_private_subnets" {
   description = "List of private subnet CIDR ranges"
   type        = list(string)
-  default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  default     = ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"]
 }
 
 variable "vpc_database_subnets" {
@@ -49,7 +49,6 @@ variable "vpc_tags" {
 }
 
 # ASG variables
-
 variable "asg_sg_name" {
   description = "Name of the autoscaling group security group"
   type        = string
@@ -125,7 +124,7 @@ variable "asg_update_default_version" {
 variable "asg_image_id" {
   description = "Auto scaling group image id"
   type        = string
-  default     = "ami-026b57f3c383c2eec"
+  default     = "ami-0b5eea76982371e91"
 }
 
 variable "asg_instance_type" {
@@ -319,7 +318,7 @@ variable "rds_major_engine_version" {
 variable "rds_instance_class" {
   description = "Relational database service instance class"
   type        = string
-  default     = "db.t2.small"
+  default     = "db.t3.micro"
 }
 
 variable "rds_allocated_storage" {
@@ -331,7 +330,7 @@ variable "rds_allocated_storage" {
 variable "rds_max_allocated_storage" {
   description = "Relational database service max allocated storage"
   type        = number
-  default     = 100
+  default     = 30
 }
 
 variable "rds_db_name" {
@@ -453,3 +452,17 @@ variable "rds_db_subnet_group_tags" {
   type        = map(string)
   default     = { "Name" = "demo-rds", "created-by" = "terraform" }
 }
+
+
+# #Route53 variable
+# variable "domain_name" {
+#   description = "Domain name"
+#   type        = string
+#   default     = "learnaws.ga"
+# }
+
+# variable "record_name" {
+#   description = "Subdomain name"
+#   type        = string
+#   default     = "www"
+# }

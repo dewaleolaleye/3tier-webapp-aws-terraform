@@ -1,7 +1,4 @@
-################################################################################
 # Local variables
-################################################################################
-
 locals {
   user_data = <<-EOT
 #!/bin/bash
@@ -30,10 +27,7 @@ sed -i 's/localhost/${module.rds.db_instance_address}/g' config.inc.php
   EOT
 }
 
-################################################################################
 # Supporting Resources
-################################################################################
-
 module "asg_sg" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "~> 4.0"
@@ -55,10 +49,7 @@ module "asg_sg" {
   tags = var.asg_sg_tags
 }
 
-################################################################################
 # Autoscaling scaling group (ASG)
-################################################################################
-
 module "asg" {
   source = "terraform-aws-modules/autoscaling/aws"
 

@@ -1,7 +1,4 @@
-################################################################################
-# Supporting Resources
-################################################################################
-
+# Supporting resources
 module "security_group" {
   source      = "terraform-aws-modules/security-group/aws"
   version     = "~> 4.0"
@@ -18,28 +15,30 @@ module "security_group" {
   tags                                                     = var.rds_sg_tags
 }
 
-################################################################################
 # Relational database service (RDS)
-################################################################################
-
 module "rds" {
   source  = "terraform-aws-modules/rds/aws"
   version = "5.1.0"
+  
   # insert the 1 required variable here
   identifier = var.rds_identifier
+  
   # All available versions: http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt
   engine               = var.rds_mysql_engine
   engine_version       = var.rds_engine_version
-  family               = var.rds_family               # DB parameter group
-  major_engine_version = var.rds_major_engine_version # DB option group
-  instance_class       = var.rds_instance_class
-
+  family               = var.rds_family               
+  
+  # DB parameter group
+  major_engine_version = var.rds_major_engine_version 
+  
+  # DB option group
+  instance_class        = var.rds_instance_class
   allocated_storage     = var.rds_allocated_storage
   max_allocated_storage = var.rds_max_allocated_storage
 
-  db_name  = var.rds_db_name
-  username = var.rds_username
-  port     = var.rds_port
+  db_name               = var.rds_db_name
+  username              = var.rds_username
+  port                  = var.rds_port
 
   multi_az               = var.rds_multi_az
   subnet_ids             = module.vpc.database_subnets
@@ -76,4 +75,3 @@ module "rds" {
   db_parameter_group_tags = var.rds_db_parameter_group_tags
   db_subnet_group_tags    = var.rds_db_subnet_group_tags
 }
-

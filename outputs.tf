@@ -1,7 +1,4 @@
-################################################################################
 # Virtual private cloud (VPC) outputs
-################################################################################
-
 output "vpc_id" {
   description = "The ID of the VPC"
   value       = module.vpc.vpc_id
@@ -352,18 +349,10 @@ output "database_network_acl_arn" {
   value       = module.vpc.database_network_acl_arn
 }
 
-################################################################################
+
 # Auto scaling group (ASG) outputs
-################################################################################
 
-################################################################################
-# ASG - Autoscaling group
-################################################################################
-
-
-################################################################################
 # Security group
-################################################################################
 output "security_group_id" {
   description = "The ID of the security group"
   value       = module.asg_sg.security_group_id
@@ -389,10 +378,7 @@ output "security_group_description" {
   value       = module.asg_sg.security_group_description
 }
 
-################################################################################
 # Autoscaling group
-################################################################################
-
 output "asg_launch_template_id" {
   description = "The ID of the launch template"
   value       = module.asg.launch_template_id
@@ -528,10 +514,7 @@ output "asg_iam_instance_profile_unique" {
   value       = module.asg.iam_instance_profile_unique
 }
 
-################################################################################
 # Launch template only
-################################################################################
-
 output "launch_template_only_launch_template_id" {
   description = "The ID of the launch template"
   value       = module.asg.launch_template_id
@@ -557,10 +540,7 @@ output "launch_template_only_launch_template_default_version" {
   value       = module.asg.launch_template_default_version
 }
 
-################################################################################
 # Application load balancer (ALB) outputs
-################################################################################
-
 output "alb_security_group_id" {
   description = "The ID of the security group"
   value       = module.alb_http_sg.security_group_id
@@ -630,9 +610,7 @@ output "https_listener_ids" {
   value       = module.alb.https_listener_ids
 }
 
-################################################################################
 # Relational database service (RDS) outputs
-################################################################################
 output "db_instance_address" {
   description = "The address of the RDS instance"
   value       = module.rds.db_instance_address
