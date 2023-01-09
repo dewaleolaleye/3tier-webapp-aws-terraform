@@ -4,8 +4,5 @@ terraform {
     encrypt        = true
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    versioning = {
-      enabled = true
-    }
   }
 }
