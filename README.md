@@ -1,5 +1,3 @@
-# 3-tier_web application_aws_terraform
-
 This 3-tier architecture module will use Terraform to provision the following resources in AWS:
 
 VPC
