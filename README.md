@@ -1,4 +1,4 @@
-This 3-tier architecture module will use Terraform to provision the following resources in AWS:
+... This 3-tier architecture module will use Terraform to provision the following resources in AWS:
 
 VPC
 Public & Private Subnets
@@ -12,5 +12,11 @@ Nat gateway
 Security groups
 Load balancer
 Auto scaling group
+
+
+... Login credentials to phpMyAdmin landing page:
+-Username: infotech_user
+-Password: [run "terraform output db_instance_password" on CLI for password]
+
 
 @2023-01-08
