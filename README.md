@@ -1,4 +1,6 @@
-# This 3-tier architecture module will use Terraform to provision the following resources in AWS:
+# 3-tier web application
+
+This 3-tier architecture module will use Terraform to provision the following resources in AWS:
 
 VPC
 Public & Private Subnets
@@ -15,8 +17,8 @@ Auto scaling group
 
 
 * Login credentials to phpMyAdmin landing page:
--Username: infotech_user
--Password: [run "terraform output db_instance_password" on CLI for password]
+* Username: infotech_user
+* Password: [run "terraform output db_instance_password" on CLI for password]
 
 
 @2023-01-08
