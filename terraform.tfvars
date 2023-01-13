@@ -16,7 +16,7 @@ asg_sg_description                      = "infotech-asg-sg"
 asg_sg_tags                             = { "Name" = "infotech-asg-sg", "created-by" = "terraform" }
 asg_name                                = "infotech-asg"
 asg_min_size                            = 0
-asg_max_size                            = 2
+asg_max_size                            = 4
 asg_desired_capacity                    = 2
 asg_wait_for_capacity_timeout           = 0
 asg_health_check_type                   = "EC2"

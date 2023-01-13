@@ -453,16 +453,3 @@ variable "rds_db_subnet_group_tags" {
   default     = { "Name" = "demo-rds", "created-by" = "terraform" }
 }
 
-
-# #Route53 variable
-# variable "domain_name" {
-#   description = "Domain name"
-#   type        = string
-#   default     = "learnaws.ga"
-# }
-
-# variable "record_name" {
-#   description = "Subdomain name"
-#   type        = string
-#   default     = "www"
-# }
