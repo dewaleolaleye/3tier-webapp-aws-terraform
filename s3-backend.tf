@@ -4,6 +4,6 @@ terraform {
     encrypt        = true
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "infotech-backend"
+    # dynamodb_table = "infotech-backend-state-lock"
   }
 }
